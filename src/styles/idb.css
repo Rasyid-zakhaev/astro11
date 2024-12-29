@@ -1,0 +1,76 @@
+/* Google fonts import link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  font-family: 'Poppins',sans-serif;
+
+}
+
+
+.wrapper{
+ position: relative;
+ left: 43%;
+  width: 100px;
+  height: 30px;
+  min-width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FFF;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+.minusC {
+  color: red;
+}
+.plusC {
+  color: green;
+}
+.number {
+  color: black;
+}
+.wrapper span{
+  width: 100%;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+}
+.wrapper span#num1{
+  font-size: 25px;
+  border-right: 1px solid rgba(0,0,0,0.2);
+  border-left: 1px solid rgba(0,0,0,0.2);
+  pointer-events: none;
+}
+
+.wrapper span#num2{
+  font-size: 25px;
+  border-right: 1px solid rgba(0,0,0,0.2);
+  border-left: 1px solid rgba(0,0,0,0.2);
+  pointer-events: none;
+}
+
+.wrapper span#num4{
+  font-size: 25px;
+  border-right: 1px solid rgba(0,0,0,0.2);
+  border-left: 1px solid rgba(0,0,0,0.2);
+  pointer-events: none;
+}
+
+.wrapper span#num5{
+  font-size: 25px;
+  border-right: 1px solid rgba(0,0,0,0.2);
+  border-left: 1px solid rgba(0,0,0,0.2);
+  pointer-events: none;
+}
+
+@media(max-width:400px) {
+  .wrapper{
+    position: relative;
+    left: 60px;
+    width: 100px;
+    height: 30px;
+  }
+	
+}
+

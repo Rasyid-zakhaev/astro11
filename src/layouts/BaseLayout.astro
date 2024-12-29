@@ -1,26 +1,431 @@
 ---
-import '../styles/global.css'
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 
-const {pageTitle} = Astro.props
+// css
+import "../styles/global.css";
+import "../styles/slide.css";
+import "../styles/sideBar.css";
+import "../styles/idb.css";
+import '../styles/fonts-6/css/all.css'
+const { pageTitle } = Astro.props;
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-	</head>
-	<body>
-		<Header />
-		<h1>{pageTitle}</h1>
-        <slot />
-		<Footer />
-		<script>
-			import "../scripts/menu.js";
-		  </script>
-	</body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="slide.css">
+    <link rel="stylesheet" href="idb.css">
+    <link rel="stylesheet" href="sideBar.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="fonts-6/css/all.css">  
+    <title>Waris App</title>
+</head>
+<body>
+<div class="sideBod">
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="w_gold.png" alt="">
+                </span>
+                <!-- <div id="logo">Waris<span id="logo-s">App</span></div> -->
+                <div class="text-open">
+                    <div class="text logo-text">
+                    <span class="name">Waris</span>
+                    <span class="profession">App</span>
+                    </div>
+                </div>
+            </div>
+
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-home-alt icon' ></i>
+                            <span class="text nav-text">Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-bar-chart-alt-2 icon' ></i>
+                            <span class="text nav-text">Revenue</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-bell icon'></i>
+                            <span class="text nav-text">Notifications</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-pie-chart-alt icon' ></i>
+                            <span class="text nav-text">Analytics</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-heart icon' ></i>
+                            <span class="text nav-text">Likes</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-wallet icon' ></i>
+                            <span class="text nav-text">Wallets</span>
+                        </a>
+                    </li>
+
+                    <li class="">
+                        <a href="#" id="keluar2">
+                            <i class='bx bx-log-out icon'></i>
+                            <span class="text nav-text">Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bottom-content">
+                
+
+                
+                
+            </div>
+        </div>
+
+    </nav>
+</div>
+
+ <div class="container-slider">
+          <!-- Page 1-->
+        <div class="container">
+            <div>
+                <h4><i class="fa-solid fa-sack-dollar"></i> Tirkah: <input type="text" placeholder="Rp." id="tirkah" class="btn" oninput="displayVal(this.value)" autocomplete=off></h4>
+            </div>
+            <div>Mayyit:
+                <label for="laki-laki">
+                    <input id="laki-laki" value="laki-laki" type="radio" name="laki-laki-perempuan" autocomplete=off>Laki-laki
+                </label>
+                <label for="perempuan">
+                    <input id="perempuan" value="perempuan" type="radio" name="laki-laki-perempuan" autocomplete=off>Perempuan
+                </label>
+            </div>
+            <div>
+            <h4><i class="fa-solid fa-money-bill-transfer"></i> Hutang: <input type="text" placeholder="Rp."id="hutang" oninput="displayVal(this.value)" autocomplete=off></h4>
+            </div>
+            <div>
+            <h4><i class="fa-solid fa-hand-holding-heart"></i> Tajhiz (Biaya Pengurursan Jenazah): <input type="text" placeholder="Rp."id="tajhiz" oninput="displayVal(this.value)" autocomplete=off></h4>
+            </div>
+            <div>
+            <h4><i class="fa-solid fa-scroll"></i> Wasiat: <input type="text" placeholder="Rp." id="wasiat" oninput="displayVal(this.value)" autocomplete=off></h4>
+            </div>
+            <div>
+                <h4><i class="fa-solid fa-filter-circle-dollar"></i> Al-Irts: <input type="text" id="irts" readonly="true" placeholder="Rp." autocomplete=off></h4>
+            </div><br><hr>
+    
+    
+            <a id="toPage2" class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    
+    <!-- Page 2 -->
+        <div class="container boxCenter">
+            <div id="mayitSuami"><label for="suami">
+                Suami <input id="suami" type="checkbox">
+            </label><br></div>
+            <div id="mayitIstri"><label for="istri">
+                Istri : <output id="num3">0</output> <input id="istri" value="0" type="range" min="0" max="4" oninput="num3.value = this.value">
+            </label><br></div>
+        
+        <label for="ayah">
+            Ayah <input id="ayah" value="ayah" type="checkbox">
+        </label><br>
+        <label for="ibu">
+            Ibu <input id="ibu" value="ibu" type="checkbox">
+        </label><br>
+        <label for="anakLk">
+            Anak Laki-Laki: <div class="wrapper">
+                <span id="minus" class="minusC decrease" data-target="num1">-</span>
+                <span id="num1" class="number">00</span>
+                <span id="plus" class="plusC increase" data-target="num1">+</span>
+              </div>
+        </label><br>
+        <label for="anakPr">
+            Anak Perempuan: <div class="wrapper">
+                <span id="minus2" class="minusC decrease" data-target="num2">-</span>
+                <span id="num2" class="number">00</span>
+                <span id="plus2" class="plusC increase" data-target="num2">+</span>
+              </div>
+        </label><br>
+        <hr>
+    
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" id="toPage3" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    
+    <!-- Page 3 -->
+        <div class="container boxCenter">
+            <div id="anakLkNone">
+                <label for="cucuLk">
+                    Cucu Laki-Laki dari Anak laki-laki: <div class="wrapper">
+                        <span id="minus4" class="minusC decrease" data-target="num4">-</span>
+                        <span id="num4" class="number">00</span>
+                        <span id="plus4" class="plusC increase" data-target="num4">+</span>
+                      </div>
+                </label><br>
+                <div id="anakPrNone">
+                    <label for="cucuPr">
+                    Cucu Perempuan dari Anak laki-laki: <div class="wrapper">
+                        <span id="minus5" class="minusC decrease" data-target="num5">-</span>
+                        <span id="num5" class="number">00</span>
+                        <span id="plus5" class="plusC increase" data-target="num5">+</span>
+                      </div>
+                </label><br>
+                </div>
+            </div>
+            <div id="skip1">
+                <p>Cucu Laki-Laki & Cucu Perempuan Dilewati karena terhalang anak laki-laki</p>
+            </div>
+            <div id="skip2">
+                <p>Cucu Perempuan Dilewati karena terhalang 2 anak perempuan atau lebih</p>
+            </div>
+            <br>
+        <hr>
+    
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    
+    <!-- Page 4 -->
+    <div class="container boxCenter">
+        <div id="ayahNone">
+            <div id="kakekDisplay">
+                <label for="kakek">
+                    Kakek <input id="kakek" value="kakek" type="checkbox">
+                </label><br>
+            </div>
+            <div id="ibuNone">
+                <label for="nenekAyah">
+                Nenek dari Ayah: <output id="num6">0</output> <input id="nenekAyah" value="0" type="range" min="0" max="4" oninput="num6.value = this.value" autocomplete=off>
+            </label><br>
+            <label for="nenekIbu">
+                Nenek dari Ibu: <output id="num7">0</output> <input id="nenekIbu" value="0" type="range" min="0" max="4" oninput="num7.value = this.value" autocomplete=off>
+            </label><br>
+            </div>
+        </div>
+        <div id="skip3">
+            <p>Kakek & Nenek Dilewati karena terhalang Ayah & Ibu</p>
+        </div>
+        <div id="skip4">
+            <p>Nenek Dilewati karena terhalang Ibu</p>
+        </div>
+        <div id="skip5">
+            <p>Kakek Dilewati karena terhalang Ayah</p>
+        </div>
+        <br>
+    <hr>
+    
+    <a id="removeWaris" class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a id="totalWaris" class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    
+    
+    <!-- Page 5 -->
+    <div class="container boxCenter">
+        <div>
+            <label for="saudaraLkSekandung">
+                Saudara Laki-Laki Sekandung: <div class="wrapper">
+                    <span id="minus8" class="minusC decrease" data-target="num8">-</span>
+                    <span id="num8" class="number">00</span>
+                    <span id="plus8" class="plusC increase" data-target="num8">+</span>
+                  </div>
+            </label><br>
+            <div id="2">
+                <label for="saudaraPrSekandung">
+                Saudara Perempuan Sekandung: <div class="wrapper">
+                    <span id="minus9" class="minusC decrease" data-target="num9">-</span>
+                    <span id="num9" class="number">00</span>
+                    <span id="plus9" class="plusC increase" data-target="num9">+</span>
+                  </div>
+            </label><br>
+            </div>
+        </div>
+        <br>
+    <hr>
+    
+    <a id="removeWaris" class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a id="toPage6" class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    
+    <!-- Page 6 -->
+    <div class="container boxCenter6">
+        <div id="saudaraSeayahNone">
+            <label for="saudaraLkSeayah">
+                Saudara Laki-Laki Seayah: <div class="wrapper">
+                    <span id="minus10" class="minusC decrease" data-target="num10">-</span>
+                    <span id="num10" class="number">00</span>
+                    <span id="plus10" class="plusC increase" data-target="num10">+</span>
+                  </div>
+            </label><br>
+            <div id="3">
+                <label for="saudaraPrSeayah">
+                Saudara Perempuan Seayah: <div class="wrapper">
+                    <span id="minus11" class="minusC decrease" data-target="num11">-</span>
+                    <span id="num11" class="number">00</span>
+                    <span id="plus11" class="plusC increase" data-target="num11">+</span>
+                  </div>
+            </label><br>
+            </div>
+        </div>
+        <div id="saudaraSeibuNone">
+            <label for="saudaraLkSeibu">
+                Saudara Laki-Laki Seibu: <div class="wrapper">
+                    <span id="minus12" class="minusC decrease" data-target="num12">-</span>
+                    <span id="num12" class="number">00</span>
+                    <span id="plus12" class="plusC increase" data-target="num12">+</span>
+                  </div>
+            </label><br>
+            <div id="4">
+                <label for="saudaraPrSeibu">
+                Saudara Perempuan Seibu: <div class="wrapper">
+                    <span id="minus13" class="minusC decrease" data-target="num13">-</span>
+                    <span id="num13" class="number">00</span>
+                    <span id="plus13" class="plusC increase" data-target="num13">+</span>
+                  </div>
+            </label><br>
+            </div>
+        </div>
+        <div id="skip6">Saudara laki-laki seayah & Saudara perempuan seayah Dilewati karena terhalang oleh Saudara laki-laki sekandung</div>
+        <div id="skip10">Saudara laki-laki seibu & Saudara perempuan seibu Dilewati karena terhalang oleh Anak perempuan / Cucu perempuan</div>
+        <br>
+    <hr>
+    
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a id="totalWaris2" class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    
+    <!-- Page 7 -->
+    <div class="container boxCenter">
+        <div>
+            <label for="anakLkSaudaraLkSekandung">
+                 Anak laki-laki dari Saudara laki-laki Sekandung: <div class="wrapper">
+                    <span id="minus14" class="minusC decrease" data-target="num14">-</span>
+                    <span id="num14" class="number">00</span>
+                    <span id="plus14" class="plusC increase" data-target="num14">+</span>
+                  </div>
+            </label><br>
+            <div id="skip7">
+                <label for="anakLkSaudaraLkSeayah">
+                Anak laki-laki dari Saudara laki-laki Seayah: <div class="wrapper">
+                    <span id="minus15" class="minusC decrease" data-target="num15">-</span>
+                    <span id="num15" class="number">00</span>
+                    <span id="plus15" class="plusC increase" data-target="num15">+</span>
+                  </div>
+            </label><br>
+            </div>
+        </div>
+        <br>
+    <hr>
+    
+    <a id="removeWaris" class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a id="totalWaris3" class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    
+    <!-- Page 8 -->
+    <div class="container boxCenter">
+        <div>
+            <label for="pamanSekandungAyah">
+                Paman Kandung (dari Ayah): <div class="wrapper">
+                    <span id="minus16" class="minusC decrease" data-target="num16">-</span>
+                    <span id="num16" class="number">00</span>
+                    <span id="plus16" class="plusC increase" data-target="num16">+</span>
+                  </div>
+            </label><br>
+            <div id="skip8">
+                <label for="pamanSekakekAyah">
+                Paman Sekakek (dari Ayah): <div class="wrapper">
+                    <span id="minus17" class="minusC decrease" data-target="num17">-</span>
+                    <span id="num17" class="number">00</span>
+                    <span id="plus17" class="plusC increase" data-target="num17">+</span>
+                  </div>
+            </label><br>
+            </div>
+        </div>
+        <br>
+    <hr>
+    
+    <a id="removeWaris" class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a id="totalWaris4" class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    
+    <!-- Page 9 -->
+    <div class="container boxCenter">
+        <div>
+            <label for="anakLkPamanSekandungAyah">
+                Anak laki-laki Paman Kandung (dari Ayah): <div class="wrapper">
+                    <span id="minus18" class="minusC decrease" data-target="num18">-</span>
+                    <span id="num18" class="number">00</span>
+                    <span id="plus18" class="plusC increase" data-target="num18">+</span>
+                  </div>
+            </label><br>
+            <div id="skip9">
+                <label for="anakLkPamanSekakekAyah">
+                Anak laki-laki Paman Sekakek (dari Ayah): <div class="wrapper">
+                    <span id="minus19" class="minusC decrease" data-target="num19">-</span>
+                    <span id="num19" class="number">00</span>
+                    <span id="plus19" class="plusC increase" data-target="num19">+</span>
+                  </div>
+            </label><br>
+            </div>
+        </div>
+        <br>
+    <hr>
+    
+    <a id="removeWaris" class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a id="totalWaris5" class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    
+    <!-- Page Result -->
+        <div class="container boxCenter10">
+        Hasil: 
+        <table id="hasil-akhir2">
+            <tr>
+                <th>Waris</th>
+                <th>@orang</th>
+            </tr>
+        <table>
+    
+        </table>
+        </table>
+        
+        <hr>
+    
+        <button><a href="index.html">Hitung Lagi</button>
+    
+        </div>
+</div>
+
+
+<script src="../scripts/waris.js"></script>
+<script src="../scripts/slide.js"></script>
+<script src="../scripts/idb.js"></script>
+<script src="../scripts/sideBar.js"></script>
+<script is:inline>
+
+   
+    
+</script>
+</body>
 </html>

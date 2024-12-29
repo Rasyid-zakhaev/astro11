@@ -1,7 +1,8 @@
 {
-  "name": "astro-23",
+  "name": "@example/minimal",
   "type": "module",
   "version": "0.0.1",
+  "private": true,
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -10,8 +11,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/preact": "^3.1.1",
-    "astro": "^4.4.4",
-    "preact": "^10.19.6"
+    "@astrojs/preact": "^3.0.0",
+    "@astrojs/rss": "^3.0.0",
+    "astro": "^3.1.1",
+    "preact": "^10.11.3"
   }
 }
